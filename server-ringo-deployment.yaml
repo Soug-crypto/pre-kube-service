@@ -31,7 +31,7 @@ spec:
               - key: num
                 operator: In
                 values:
-                - 2
+                - "2"
             topologyKey: kubernetes.io/hostname
       containers:
       - env:
