@@ -32,7 +32,7 @@ spec:
                 operator: In
                 values:
                 - "2"
-            topologyKey: "kubernetes.io/hostname"
+            topologyKey: "kubernetes.io/node2"
       containers:
       - env:
         - name: NAME
