@@ -27,9 +27,9 @@ spec:
         - maxSkew: 1
           topologyKey: node
           whenUnsatisfiable: DoNotSchedule
-          # labelSelector:
-          #   matchLabels:
-          #     num: "2"
+          labelSelector:
+            matchLabels:
+              num: "2"
       containers:
       - env:
         - name: NAME
