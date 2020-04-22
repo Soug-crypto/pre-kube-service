@@ -23,13 +23,16 @@ spec:
       labels:
         io.kompose.service: server-ringo
     spec:
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: node
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              num: "2"
+       affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - store
+            topologyKey: "kubernetes.io/hostname"
       containers:
       - env:
         - name: NAME
