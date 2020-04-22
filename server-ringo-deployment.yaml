@@ -27,7 +27,7 @@ spec:
       - env:
         - name: NAME
           value: Ringo
-        image: server-ringo
+        image: awheida/server-ringo
         imagePullPolicy: ""
         name: server-ringo
         ports:
