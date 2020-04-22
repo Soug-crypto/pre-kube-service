@@ -28,10 +28,10 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
-              - key: app
+              - key: num
                 operator: In
                 values:
-                - store
+                - "2"
             topologyKey: "kubernetes.io/hostname"
       containers:
       - env:
