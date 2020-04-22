@@ -1,0 +1,39 @@
+piVersion: apps/v1
+  2 kind: Deployment
+  3 metadata:
+  4   annotations:
+  5     kompose.cmd: kompose convert
+  6     kompose.version: 1.21.0 (992df58d8)
+  7   creationTimestamp: null
+  8   labels:
+  9     io.kompose.service: server-ringo
+ 10   name: server-ringo
+ 11 spec:
+ 12   replicas: 1
+ 13   selector:
+ 14     matchLabels:
+ 15       io.kompose.service: server-ringo
+ 16   strategy: {}
+ 17   template:
+ 18     metadata:
+ 19       annotations:
+ 20         kompose.cmd: kompose convert
+ 21         kompose.version: 1.21.0 (992df58d8)
+ 22       creationTimestamp: null
+ 23       labels:
+ 24         io.kompose.service: server-ringo
+ 25     spec:
+ 26       containers:
+ 27       - env:
+ 28         - name: NAME
+ 29           value: Ringo
+ 30         image: awheida/server-ringo
+ 31         imagePullPolicy: ""
+ 32         name: server-ringo
+ 33         ports:
+ 34         - containerPort: 3000
+ 35         resources: {}
+ 36       restartPolicy: Always
+ 37       serviceAccountName: ""
+ 38       volumes: null
+ 39 status: {}
