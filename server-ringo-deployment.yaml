@@ -23,7 +23,7 @@ spec:
       labels:
         io.kompose.service: server-ringo
     spec:
-       affinity:
+      affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
@@ -32,7 +32,7 @@ spec:
                 operator: In
                 values:
                 - "2"
-          # topologyKey: "kubernetes.io/node2"
+            # topologyKey: "kubernetes.io/hostname"
       containers:
       - env:
         - name: NAME
