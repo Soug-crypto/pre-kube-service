@@ -23,6 +23,16 @@ spec:
       labels:
         io.kompose.service: server-ringo
     spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: num
+                operator: In
+                values:
+                - 2
+            topologyKey: kubernetes.io/hostname
       containers:
       - env:
         - name: NAME
