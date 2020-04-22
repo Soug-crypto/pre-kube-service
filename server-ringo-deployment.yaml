@@ -25,11 +25,11 @@ spec:
     spec:
       topologySpreadConstraints:
         - maxSkew: 1
-          topologyKey: zone
+          topologyKey: node
           whenUnsatisfiable: DoNotSchedule
           labelSelector:
             matchLabels:
-              foo: bar
+              num: "2"
       containers:
       - env:
         - name: NAME
