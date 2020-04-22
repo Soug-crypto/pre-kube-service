@@ -92,7 +92,7 @@ io.on('connection', function (socket) {
 
 /////
 const kubemq = require('kubemq-nodejs')
-let pub = new kubemq.Publisher('localhost', '9090', 'pub', 'testing_event_channel');
+let pub = new kubemq.Publisher('kubemq-cluster-rest.kubemq.svc.cluster.local', '9090', 'pub', 'testing_event_channel');
  
 let event = new kubemq.Publisher.Event(kubemq.stringToByte('test'));
  
