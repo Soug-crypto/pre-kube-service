@@ -27,12 +27,12 @@ spec:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
-              matchExpressions:
-              - key: num
-                operator: In
-                values:
-                - "3"
-            topologyKey: "kubernetes.io/hostname"
+              # matchExpressions:
+              # - key: num
+              #   operator: In
+              #   values:
+              #   - "3"
+            topologyKey: "kubernetes.io/hostname=node3"
       containers:
       - env:
         - name: NAME
