@@ -23,7 +23,7 @@ async function connect () {
   let success = false
   if (success === false) {
     try {
-      let pub = await new kubemq.Publisher('kubemq-cluster-rest.kubemq.svc.cluster.localgit ', '9090', 'pub', 'testing_event_channel');
+      let pub = await new kubemq.Publisher('kubemq-cluster-rest.kubemq.svc.cluster.local ', '9090', 'pub', 'testing_event_channel');
      
       let event = await new kubemq.Publisher.Event(kubemq.stringToByte('test'));
       
