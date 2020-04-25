@@ -5,7 +5,7 @@ var amqp = require('amqplib');
 async function consumer(){
     const queue = 'hello';
     try {
-        const conn = await amqp.connect('amqp://admin:admin@localhost:5672');
+        const conn = await amqp.connect('amqp://guest:guest@rabbitmq-service:5672');
         const channel = await conn.createChannel();
         await channel.assertQueue(queue, {durable: false});
         
